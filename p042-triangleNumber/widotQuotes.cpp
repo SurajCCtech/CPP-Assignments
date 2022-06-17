@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -10,30 +11,42 @@ string alpha[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", 
 int main()
 {
     int i;
-    int sum=0;
+    int sum = 0;
     fstream file;
     file.open("Student.txt", ios::in);
-
     string line;
+    string temp;
+    stringstream ss(line);
     while (getline(file, line, '"'))
     {
         stringstream ss(line);
         while (getline(ss, line, ','))
         {
             cout << line << endl;
+            ;
         }
         if (getline(file, line, '"'))
         {
             cout << line;
         }
-        for (i = 0; i < 26; i++)
+    }
+
+    vector<string> words;
+    while (ss >> temp)
     {
-        if (line == alpha[i])
-        {
-            sum+=i;
-        }
-        cout << sum <<endl;
+        words.push_back(temp);
     }
-    }
-    
+    for (int i = 0; i < words.size(); i++)
+        cout << words[i] << endl;
 }
+
+/*
+for (i = 0; i < 26; i++)
+        {
+            if (line == alpha[i])
+            {
+                sum += i;
+            }
+            cout << sum << endl;
+        }
+ */
