@@ -1,0 +1,5 @@
+﻿  decipherText.cpp
+C:\Users\RELIANCE\Desktop\CCTech\BOOTCAMP\Module 2  (C and CPP)\Newassignmetns\decipherText\decipherText.cpp(15,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\RELIANCE\Desktop\CCTech\BOOTCAMP\Module 2  (C and CPP)\Newassignmetns\decipherText\decipherText.cpp(25,27): warning C4018: '<': signed/unsigned mismatch
+C:\Users\RELIANCE\Desktop\CCTech\BOOTCAMP\Module 2  (C and CPP)\Newassignmetns\decipherText\decipherText.cpp(40,31): warning C4018: '<': signed/unsigned mismatch
+  decipherText.vcxproj -> C:\Users\RELIANCE\Desktop\CCTech\BOOTCAMP\Module 2  (C and CPP)\Newassignmetns\decipherText\Debug\decipherText.exe
