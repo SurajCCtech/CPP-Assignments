@@ -6,14 +6,9 @@
 
 using namespace std;
 
-char alpha[] =  {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
-void toVector();
+char alpha[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+
 int main()
-{
-    toVector();
-    return EXIT_SUCCESS;
-}
-string removePunctuation()
 {
     fstream file;
     file.open("Student.txt", ios::in);
@@ -25,46 +20,40 @@ string removePunctuation()
         // {
         //     cout << line << endl;
         // }
-        getline(file, line, '"');// if (getline(file, line, '"'))
+        getline(file, line, '"'); // if (getline(file, line, '"'))
         // {
         //     cout << line;
         // }
     }
-    return line;
-}
-
-void toVector()
-{
 
     vector<string> words;
     string temp;
-    string word1 = removePunctuation();
     cout << "Hii1";
-    while (!word1.empty())
+    while (words.size() != 0)
     {
-        words.push_back(word1);
+        cout << "Hii2";
+        words.push_back(line);
     }
     for (int i = 0; i < words.size(); i++)
         cout << words[i] << endl;
-    
-  
-  
-  /* int sum = 0;
-    for (string::iterator it = word1.begin(); it != word1.end(); ++it)
-    {
-        //cout << *it << endl;
-        for (int i = 0; i < 26; i++)
-        {
-            if (*it == alpha[i])
-            {
-                char ch = alpha[i];
-                sum += ch - 'A' + 1;
-            }
-        }
-    }
-    cout << "Sum of places= "<< sum << endl;
 
-    */
+    return EXIT_SUCCESS;
 }
 
+/* int sum = 0;
+  for (string::iterator it = word1.begin(); it != word1.end(); ++it)
+  {
+      //cout << *it << endl;
+      for (int i = 0; i < 26; i++)
+      {
+          if (*it == alpha[i])
+          {
+              char ch = alpha[i];
+              sum += ch - 'A' + 1;
+          }
+      }
+  }
+  cout << "Sum of places= "<< sum << endl;
+
+  */
 
