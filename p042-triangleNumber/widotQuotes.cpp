@@ -6,47 +6,65 @@
 
 using namespace std;
 
-string alpha[26] = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"};
-
+char alpha[] =  {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'};
+void toVector();
 int main()
 {
-    int i;
-    int sum = 0;
+    toVector();
+    return EXIT_SUCCESS;
+}
+string removePunctuation()
+{
     fstream file;
     file.open("Student.txt", ios::in);
     string line;
-    string temp;
-    stringstream ss(line);
     while (getline(file, line, '"'))
     {
         stringstream ss(line);
-        while (getline(ss, line, ','))
-        {
-            cout << line << endl;
-            ;
-        }
-        if (getline(file, line, '"'))
-        {
-            cout << line;
-        }
+        getline(ss, line, ','); // while (getline(ss, line, ','))
+        // {
+        //     cout << line << endl;
+        // }
+        getline(file, line, '"');// if (getline(file, line, '"'))
+        // {
+        //     cout << line;
+        // }
     }
+    return line;
+}
+
+void toVector()
+{
 
     vector<string> words;
-    while (ss >> temp)
+    string temp;
+    string word1 = removePunctuation();
+    cout << "Hii1";
+    while (!word1.empty())
     {
-        words.push_back(temp);
+        words.push_back(word1);
     }
     for (int i = 0; i < words.size(); i++)
         cout << words[i] << endl;
+    
+  
+  
+  /* int sum = 0;
+    for (string::iterator it = word1.begin(); it != word1.end(); ++it)
+    {
+        //cout << *it << endl;
+        for (int i = 0; i < 26; i++)
+        {
+            if (*it == alpha[i])
+            {
+                char ch = alpha[i];
+                sum += ch - 'A' + 1;
+            }
+        }
+    }
+    cout << "Sum of places= "<< sum << endl;
+
+    */
 }
 
-/*
-for (i = 0; i < 26; i++)
-        {
-            if (line == alpha[i])
-            {
-                sum += i;
-            }
-            cout << sum << endl;
-        }
- */
+
